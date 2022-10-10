@@ -16,7 +16,7 @@ public abstract class Bag {
     private String color;
     private int numberOfContents;
     private int capacity;
-    private String[] contents = new String[0];
+    private String[] contents;
 
 
 
@@ -29,9 +29,17 @@ public abstract class Bag {
      * be empty (e.g. numberOfContents is 0 and an empty String array for
      * its contents.)
      */
+    /**
+     *Creates a new Bag object with the given color and capacity. Other attributes empty.
+     *
+     * @param color The color of the bag
+     * @param capacity The capacity of the bag
+     */
     Bag(String color, int capacity){
         this.color = color;
         this.capacity = capacity;
+        this.numberOfContents = 0;
+        this.contents = new String[0];
     }
 
 
@@ -43,12 +51,27 @@ public abstract class Bag {
      *           - getNumberOfContents
      *           - getCapacity
      */
+    /**
+     * Returns the Bag's colour
+     *
+     * @return the Bag's colour
+     */
     public String getColor(){
         return this.color;
     }
+    /**
+     * Returns the number of the content in the Bag
+     *
+     * @return the number of the content in the Bag
+     */
     public int getNumberOfContents() {
         return this.numberOfContents;
     }
+    /**
+     * Returns the Bag's capacity
+     *
+     * @return the Bag's capacity
+     */
     public int getCapacity() {
         return this.capacity;
     }
@@ -59,6 +82,11 @@ public abstract class Bag {
     /*
      * TODO: Create a setter function called setColor which sets the
      *       color of this bag to the given color.
+     */
+    /**
+     * Sets the Bag's colour
+     *
+     * @param color The color to set the Bag
      */
     public void setColor(String color){
         this.color = color;
@@ -77,6 +105,13 @@ public abstract class Bag {
      *
      *       This method should return true if the item was added
      *       and false otherwise.
+     */
+    /**
+     * Adds the given item to the contents of this Bag if Bag is not full,
+     * returns if successful or not, update numberOfContents
+     *
+     * @param item The item to be added to the Bag
+     * @return if the item was added to the Bag
      */
     public boolean addItem(String item){
         if(contents.length < capacity){
@@ -101,11 +136,17 @@ public abstract class Bag {
      *       and the item should be removed from this Bag.
      *       Remember to modify numberOfContents accordingly.
      *
+     */
+    /**
+     * Removes the last item in the Bag and updates numberOfContents.
      * If there are no items in this Bag, return null.
      *
-     * @return
+     * @return the item removed from this Bag, or null if Bag is empty
      */
     public String popItem(){
+        if (this.numberOfContents == 0) {
+            return null;
+        }
         String[] newArr = new String[contents.length - 1];
         String poppedItem = contents[contents.length - 1];
         for(int i = 0; i < contents.length - 1; i++){
@@ -135,7 +176,7 @@ public abstract class Bag {
      * This method requires you to have created the private
      * instance variables mentioned above.
      *
-     * @return
+     * @return the details of this Bag in String form
      */
     @Override
     public String toString() {

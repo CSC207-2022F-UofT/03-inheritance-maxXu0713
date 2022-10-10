@@ -12,8 +12,8 @@ public class HandBag extends Bag{
      * Creates a new HandBag with the given color and
      * capacity.
      *
-     * @param color
-     * @param capacity
+     * @param color Handbag's colour
+     * @param capacity Handbag's capacity
      */
     public HandBag(String color, int capacity) {
         /**
@@ -28,6 +28,7 @@ public class HandBag extends Bag{
      */
     @Override
     public void enhance() {
+
         /* TODO: Implement this method.
          *       You may want to use the increaseCapacity() method that was
          *       implemented in Bag.

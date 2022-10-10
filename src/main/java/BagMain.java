@@ -8,11 +8,15 @@
 class BagMain {
     /**
      * TODO: Implement this method
+     * This method should work for *all* Bags! We will test this method
+     * on new Bag types (and HandBag subclasses)!
+     */
+    /**
      * Enhance each of the bags in bags. If double_enhance_handbags is
      * True, then enhance any HandBags a second time.
      *
-     * This method should work for *all* Bags! We will test this method
-     * on new Bag types (and HandBag subclasses)!
+     * @param bags Bags to be enhanced
+     * @param double_enhance_handbags if the handbags should be enhanced twice
      */
     public static void enhanceBags(Bag[] bags, boolean double_enhance_handbags) {
         // TODO: Implement this.
